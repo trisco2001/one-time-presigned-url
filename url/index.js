@@ -14,6 +14,7 @@ exports.handler = async event => {
 
   const signedUrl = s3.getSignedUrl('putObject', {
     Bucket: bucket,
+    ACL: "public-read",
     Key: `uploads/${uuidv4()}`,
   });
 

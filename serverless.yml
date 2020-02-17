@@ -1,8 +1,8 @@
-service: presigned-upload # change this
+service: tristan-pre-signed-url-sample # change this
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   region: us-east-1 # lambda@edge functions & cloudfront needs to be deployed to us-east-1
   iamRoleStatements:
     - Effect: Allow
@@ -15,6 +15,7 @@ provider:
     - Effect: Allow
       Action:
         - s3:PutObject
+        - s3:PutObjectAcl
         - s3:GetObject
         - s3:ListBucket
         - s3:ListBucketVersions
